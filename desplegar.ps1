@@ -1,3 +1,7 @@
+param(
+    [string]$RutaPHP = 'php'
+)
+
 $archivoOrigen = Join-Path $PSScriptRoot "origen\index.php"
 $archivoDestino = Join-Path $PSScriptRoot "pruebas\index.php"
 
@@ -11,4 +15,4 @@ if ($LASTEXITCODE -ne 0) {
 Copy-Item $archivoOrigen $archivoDestino -Force -ErrorAction Stop
 
 Write-Host "Version publicada en el ambiente de pruebas."
-php -S localhost:8018 -t pruebas
+
